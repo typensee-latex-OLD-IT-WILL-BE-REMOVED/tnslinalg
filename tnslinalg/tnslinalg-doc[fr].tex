@@ -1,0 +1,509 @@
+%\documentclass[12pt,a4paper]{scrartcl}
+\documentclass[12pt,a4paper]{article}
+
+\makeatletter % Technical doc - START
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{ucs}
+
+\usepackage[french]{babel,varioref}
+
+\usepackage[top=2cm, bottom=2cm, left=1.5cm, right=1.5cm]{geometry}
+\usepackage{enumitem}
+
+\usepackage{multicol}
+
+\usepackage{makecell}
+
+\usepackage{color}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
+
+\usepackage{amsthm}
+
+\usepackage{tcolorbox}
+\tcbuselibrary{listingsutf8}
+
+\usepackage{ifplatform}
+
+\usepackage{ifthen}
+
+\usepackage{cbdevtool}
+
+
+
+% MISC
+
+\newtcblisting{latexex}{%
+	sharp corners,%
+	left=1mm, right=1mm,%
+	bottom=1mm, top=1mm,%
+	colupper=red!75!blue,%
+	listing side text
+}
+
+\newtcblisting{latexex-flat}{%
+	sharp corners,%
+	left=1mm, right=1mm,%
+	bottom=1mm, top=1mm,%
+	colupper=red!75!blue,%
+}
+
+\newtcblisting{latexex-alone}{%
+	sharp corners,%
+	left=1mm, right=1mm,%
+	bottom=1mm, top=1mm,%
+	colupper=red!75!blue,%
+	listing only
+}
+
+
+\newcommand\env[1]{\texttt{#1}}
+\newcommand\macro[1]{\env{\textbackslash{}#1}}
+
+
+
+\setlength{\parindent}{0cm}
+\setlist{noitemsep}
+
+\theoremstyle{definition}
+\newtheorem*{remark}{Remarque}
+
+\usepackage[raggedright]{titlesec}
+
+\titleformat{\paragraph}[hang]{\normalfont\normalsize\bfseries}{\theparagraph}{1em}{}
+\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{0.5em}
+
+
+\newcommand\separation{
+	\medskip
+	\hfill\rule{0.5\textwidth}{0.75pt}\hfill
+	\medskip
+}
+
+
+\newcommand\extraspace{
+	\vspace{0.25em}
+}
+
+
+\newcommand\whyprefix[2]{%
+	\textbf{\prefix{#1}}-#2%
+}
+
+\newcommand\mwhyprefix[2]{%
+	\texttt{#1 = #1-#2}%
+}
+
+\newcommand\prefix[1]{%
+	\texttt{#1}%
+}
+
+
+\newcommand\inenglish{\@ifstar{\@inenglish@star}{\@inenglish@no@star}}
+
+\newcommand\@inenglish@star[1]{%
+	\emph{\og #1 \fg}%
+}
+
+\newcommand\@inenglish@no@star[1]{%
+	\@inenglish@star{#1} en anglais%
+}
+
+
+\newcommand\ascii{\texttt{ASCII}}
+
+
+% Example
+\newcounter{paraexample}[subsubsection]
+
+\newcommand\@newexample@abstract[2]{%
+	\paragraph{%
+		#1%
+		\if\relax\detokenize{#2}\relax\else {} -- #2\fi%
+	}%
+}
+
+
+
+\newcommand\newparaexample{\@ifstar{\@newparaexample@star}{\@newparaexample@no@star}}
+
+\newcommand\@newparaexample@no@star[1]{%
+	\refstepcounter{paraexample}%
+	\@newexample@abstract{Exemple \theparaexample}{#1}%
+}
+
+\newcommand\@newparaexample@star[1]{%
+	\@newexample@abstract{Exemple}{#1}%
+}
+
+
+% Change log
+\newcommand\topic{\@ifstar{\@topic@star}{\@topic@no@star}}
+
+\newcommand\@topic@no@star[1]{%
+	\textbf{\textsc{#1}.}%
+}
+
+\newcommand\@topic@star[1]{%
+	\textbf{\textsc{#1} :}%
+}
+
+\makeatother % Technical doc - END
+
+
+\usepackage{ tnslinalg }
+
+
+\begin{document}
+
+\renewcommand\labelitemi{\raisebox{0.125em}{\tiny\textbullet}}
+\renewcommand{\labelitemii}{---}
+
+\title{   %
+	Le package \texttt{ tnslinalg }\\%
+	{\footnotesize Code source disponible sur \url{ https://github.com/typensee-latex/tnstools.git }.}\\%
+{\footnotesize Version \texttt{0.0.0-beta} développée et testée sur \macosxname{}.}%
+}
+\author{Christophe BAL}
+\date{2020-07-10}{{{{
+
+\maketitle
+
+
+\vspace{2em}
+
+\hrule
+
+\tableofcontents
+
+\vspace{1.5em}
+
+\hrule
+
+\newpage
+
+\section{Introduction}
+
+Le package \verb+tnslinalg+ complète un tout petit peu l'excellent package \verb+nicematrix+.
+\section{Matrices}
+
+Tout le boulot ou presque est fait par l'excellent package \verb+nicematrix+
+\footnote{
+	On impose l'option \texttt{transparent}.
+} 
+avec l'ajout 
+d'une macro
+%de deux macros
+\emph{\og maison \fg} à but pédagogique.
+Veuillez vous reporter à la documentation de \verb+nicematrix+ pour savoir comment s'y prendre en général.
+
+
+% ---------------------- %
+
+
+\subsection{Quelques exemples pour bien démarrer}
+
+\newparaexample{Vu dans la documentation de \texttt{nicematrix}}
+
+\begin{latexex}
+$\begin{pmatrix}
+    1      & \cdots & \cdots & 1      \\
+    0      & \ddots &        & \vdots \\
+    \vdots & \ddots & \ddots & \vdots \\
+    0      & \cdots & 0      & 1
+\end{pmatrix}$
+\end{latexex}
+
+
+% ---------------------- %
+
+
+\newparaexample{}
+
+\begin{latexex}
+$\begin{vmatrix}
+    1      & \cdots & \cdots & 1      \\
+    0      & \ddots &        & \vdots \\
+    \vdots & \ddots & \ddots & \vdots \\
+    0      & \cdots & 0      & 1
+\end{vmatrix}$
+\end{latexex}
+
+
+% ---------------------- %
+
+
+\newparaexample{}
+
+\begin{latexex}
+$\begin{bmatrix}
+    1      & \cdots & \cdots & 1      \\
+    0      & \ddots &        & \vdots \\
+    \vdots & \ddots & \ddots & \vdots \\
+    0      & \cdots & 0      & 1
+\end{bmatrix}$
+\end{latexex}
+
+
+% ---------------------- %
+
+
+\newparaexample{Vu dans la documentation de \texttt{nicematrix}}
+
+\begin{latexex}
+$\begin{pNiceMatrix}[name = mymatrix]
+     1 & 2 & 3 \\
+     4 & 5 & 6 \\
+     7 & 8 & 9
+ \end{pNiceMatrix}$
+
+ \tikz[remember picture,
+       overlay]
+ \draw[red]
+     (mymatrix-2-2) circle (2.5mm);
+\end{latexex}
+
+
+% ---------------------- %
+
+
+\newparaexample{Vu dans la documentation de \texttt{nicematrix}}
+
+\begin{latexex}
+$\left(
+     \begin{NiceArray}{CCCC:C}
+         1  & 2  & 3  & 4  & 5  \\
+         6  & 7  & 8  & 9  & 10 \\
+         11 & 12 & 13 & 14 & 15
+     \end{NiceArray}
+ \right)$
+\end{latexex}$
+
+
+% ---------------------- %
+
+
+\newparaexample{Proposition de l'auteur de \texttt{nicematrix} suite à une discussion par mail}
+
+\begin{latexex}
+% Besoin du package ``ifthen``.
+\newcommand\aij{%
+  a_{\arabic{iRow}\arabic{jCol}}%
+}
+
+$\begin{bNiceArray}{*{5}{>{%
+     \ifthenelse{\value{iRow}>0}{\aij}{}%
+ }C}}[
+     first-col,
+     first-row,
+     code-for-first-row
+       = \mathbf{\arabic{jCol}},
+     code-for-first-col
+       = \mathbf{\arabic{iRow}}
+   ]
+       & & & & & \\
+       & & & & & \\
+       & & & & &
+ \end{bNiceArray}$
+\end{latexex}$
+
+
+% ---------------------- %
+
+
+\newparaexample{Avec des calculs automatiques}
+
+\begin{latexex}
+\newcounter{cntaij}
+\newcommand\aij{%
+    \setcounter{cntaij}{\value{iRow}}%
+    \addtocounter{cntaij}{\value{jCol}}%
+    \addtocounter{cntaij}{-1}%
+    \arabic{cntaij}%
+}
+
+Si $a_{ij} = i + j - 1$ alors
+
+$(a_{ij})_{1 \leq i \leq 3 ,
+           1 \leq j \leq 5}
+ =
+ \begin{bNiceArray}{*{5}{>{\aij}C}}
+     & & & & \\
+     & & & & \\
+     & & & &
+ \end{bNiceArray}$
+\end{latexex}
+%\section{Matrices}
+
+\subsection{\texorpdfstring{Calculs expliqués des déterminants $2 \times 2$}%
+                           {Calculs expliqués des déterminants 2x2}}
+
+\newparaexample*{}
+
+Dans l'exemple suivant, le préfixe \prefix{c} est pour \whyprefix{c}{alculer} et \prefix{two} signifie \inenglish{deux}
+\footnote{
+	En coulisse on utilise les outils pour le critère de colinéarité présentés dans la section \ref{colinearity-criteria}.
+}.
+
+\begin{latexex}
+ $\calcdettwo*    {a}{c}%
+                  {b}{d}
+= \calcdettwo     {a}{c}%
+                  {b}{d}
+= \calcdettwo[exp]{a}{c}%
+                  {b}{d}$
+\end{latexex}
+
+
+\begin{remark}
+	Il existe deux autres types de développement.
+	\begin{enumerate}
+		\item $\calcdettwo[cexp]{a}{c}{b}{d}$ s'obtient via l'option \verb+cexp+.
+		
+		\item $\calcdettwo[texp]{a}{c}{b}{d}$ s'obtient via l'option \verb+texp+
+	\end{enumerate}
+	\prefix{exp} est pour \whyprefix{exp}{and} soit \inenglish{développer}, \prefix{c} pour \macro{cdot} et enfin \prefix{t} pour \macro{times}.
+\end{remark}
+
+
+% ---------------------- %
+\newpage
+
+\section{Historique}
+
+Nous ne donnons ici qu'un très bref historique récent
+\footnote{
+	On ne va pas au-delà de un an depuis la dernière version.
+}
+de \verb+tnslinalg+ à destination de l'utilisateur principalement.
+Tous les changements sont disponibles uniquement en anglais dans le dossier \verb+change-log+ : voir le code source de \verb+tnslinalg+ sur \verb+github+.
+
+\begin{description}
+% Changes shown - START
+
+    \medskip
+    \item[2020-07-10] Première version \verb+0.0.0-beta+.
+% ------------------------ %
+
+% Changes shown - END 
+\end{description}
+
+
+\newpage
+\section{Toutes les fiches techniques} \label{techincal-ids}
+
+
+
+\subsubsection{\texorpdfstring{Matrices -- Calculs expliqués des déterminants $2 \times 2$}%
+                          {Matrices -- Calculs expliqués des déterminants 3x3}}
+
+\IDmacro{calcdettwo}{1}{4}  où \quad \mwhyprefix{c}{alculate}
+
+\IDmacro{calcdettwo*}{1}{4}  où \quad \mwhyprefix{c}{alculate}
+
+\IDoption{} la valeur par défaut est \verb+std+ pour \verb+standard+. Voici les différentes valeurs possibles.
+\begin{enumerate}
+	\item \verb+std+ : on utilise l'écriture matricielle.
+
+	\item \verb+exp+ : ceci demande d'afficher une formule développée en utilisant $\times$ pour les produits.
+
+	\item \verb+cexp+ : comme \verb+exp+ mais avec le symbole $\cdot$ obtenu via \macro{cdot}.
+
+	\item \verb+sexp+ : comme \verb+exp+ mais avec un espace pour séparer les facteurs de chaque produit.
+\end{enumerate}
+
+\IDarg{1} l'entrée à la position $(1, 1)$
+
+\IDarg{2} l'entrée à la position $(1, 2)$
+
+\extraspace
+
+\IDarg{3} l'entrée à la position $(2, 1)$
+
+\IDarg{4} l'entrée à la position $(2, 2)$                   
+
+
+
+
+
+
+
+
+%% ---------------------- %
+%
+%
+%\subsection{\texorpdfstring{Calculs expliqués des déterminants $3 \times 3$}%
+%                              {Calculs expliqués des déterminants 3x3}}
+%
+%Dans les exemples suivants, le préfixe \prefix{c} reste pour \whyprefix{c}{alculer} et \prefix{three} est pour \inenglish{trois}.
+%
+%
+%% ---------------------- %
+%
+%
+%\subsubsection{Exemple 1 -- Bien pour les débutants}
+%
+%\begin{latexex}
+%$\calcdetthree{a}{c}{c}%
+%           {x}{y}{z}%
+%           {r}{s}{t}$
+%\end{latexex}         
+%
+%
+%% ---------------------- %
+%
+%
+%\subsubsection{Exemple 2 -- Plus efficace à l'usage}
+%
+%\begin{latexex}
+%$\calcdetthree*{a}{c}{c}%
+%            {x}{y}{z}%
+%            {r}{s}{t}$
+%\end{latexex}                      
+%
+%
+%% ---------------------- %
+%
+%
+%\subsection{Fi    ches techniques}
+%
+%\subsubsection{\texorpdfstring{Calculs expliqués des déterminants $3 \times 3$}%
+%                          {Calculs expliqués des déterminants 3x3}}
+%
+%\IDmacro*{calcdetthree}{9}  où \quad \mwhyprefix{c}{alculate}
+%
+%\IDmacro*{calcdetthree*}{9}  où \quad \mwhyprefix{c}{alculate}
+%
+%\IDarg{1} l'entrée à la position $(1, 1)$
+%
+%\IDarg{2} l'entrée à la position $(1, 2)$
+%
+%\IDarg{3} l'entrée à la position $(1, 3)$
+%
+%\extraspace
+%
+%\IDarg{4} l'entrée à la position $(2, 1)$
+%
+%\IDarg{5} l'entrée à la position $(2, 2)$
+%
+%\IDarg{6} l'entrée à la position $(2, 3)$
+%
+%\extraspace
+%
+%\IDarg{7} l'entrée à la position $(3, 1)$
+%
+%\IDarg{8} l'entrée à la position $(3, 2)$
+%
+%\IDarg{9} l'entrée à la position $(3, 3)$
+%
+
+
+\end{document}

@@ -1,0 +1,8 @@
+==========
+2020-07-10
+==========
+
+**First version version::``0.0.0-beta`` of ¨tnslinalg:** this package allows to write efficiently matrices.
+
+warning::
+    This package uses the package `tnscom`.
