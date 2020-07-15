@@ -1,4 +1,11 @@
 ==========
+2020-07-15
+==========
+
+**Internal machinery for the calculation of a `2*2`det :** some factorization has been done.
+
+
+==========
 2020-07-10
 ==========
 
