@@ -1,4 +1,11 @@
 ==========
+2020-07-20
+==========
+
+**Documentation :** update the examples of nice matrices that use the old `C` instead of the brand new `c`.
+
+
+==========
 2020-07-15
 ==========
 

@@ -270,7 +270,7 @@ $\begin{pNiceMatrix}[name = mymatrix]
  \draw[red]
      (mymatrix-2-2) circle (2.5mm);
 \end{latexex}
-
+%
 
 % ---------------------- %
 
@@ -279,7 +279,7 @@ $\begin{pNiceMatrix}[name = mymatrix]
 
 \begin{latexex}
 $\left(
-     \begin{NiceArray}{CCCC:C}
+     \begin{NiceArray}{cccc:c}
          1  & 2  & 3  & 4  & 5  \\
          6  & 7  & 8  & 9  & 10 \\
          11 & 12 & 13 & 14 & 15
@@ -301,7 +301,7 @@ $\left(
 
 $\begin{bNiceArray}{*{5}{>{%
      \ifthenelse{\value{iRow}>0}{\aij}{}%
- }C}}[
+ }c}}[
      first-col,
      first-row,
      code-for-first-row
@@ -335,7 +335,7 @@ Si $a_{ij} = i + j - 1$ alors
 $(a_{ij})_{1 \leq i \leq 3 ,
            1 \leq j \leq 5}
  =
- \begin{bNiceArray}{*{5}{>{\aij}C}}
+ \begin{bNiceArray}{*{5}{>{\aij}c}}
      & & & & \\
      & & & & \\
      & & & &
