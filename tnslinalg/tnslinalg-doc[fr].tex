@@ -12,6 +12,8 @@
 \usepackage[top=2cm, bottom=2cm, left=1.5cm, right=1.5cm]{geometry}
 \usepackage{enumitem}
 
+\usepackage{pgffor}
+
 \usepackage{multicol}
 
 \usepackage{makecell}
@@ -35,7 +37,7 @@
 
 \usepackage{ifthen}
 
-\usepackage{cbdevtool}
+\usepackage{macroenvsign}
 
 
 % Sections numbering
@@ -470,9 +472,9 @@ Tous les changements sont disponibles uniquement en anglais dans le dossier \ver
 
 
 
-\IDmacro{calcdettwo }{1}{4}  où \quad \mwhyprefix{c}{alculate}
+\IDmacro{calcdettwo }{1}{4} \hfill \mwhyprefix{c}{alculate}
 
-\IDmacro{calcdettwo*}{1}{4}  où \quad \mwhyprefix{c}{alculate}
+\IDmacro{calcdettwo*}{1}{4} \hfill \mwhyprefix{c}{alculate}
 
 \IDoption{} la valeur par défaut est \verb+std+ pour \verb+standard+. Voici les différentes valeurs possibles.
 \begin{enumerate}
@@ -543,9 +545,9 @@ Tous les changements sont disponibles uniquement en anglais dans le dossier \ver
 %\textit{\texorpdfstring{Calculs expliqués des déterminants $3 \times 3$}%
 %                          {Calculs expliqués des déterminants 3x3}}
 %
-%\IDmacro*{calcdetthree}{9}  où \quad \mwhyprefix{c}{alculate}
+%\IDmacro*{calcdetthree}{9} \hfill \mwhyprefix{c}{alculate}
 %
-%\IDmacro*{calcdetthree*}{9}  où \quad \mwhyprefix{c}{alculate}
+%\IDmacro*{calcdetthree*}{9} \hfill \mwhyprefix{c}{alculate}
 %
 %\IDarg{1} l'entrée à la position $(1, 1)$
 %
