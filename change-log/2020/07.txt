@@ -1,4 +1,18 @@
 ==========
+2020-07-30
+==========
+
+**Internal machinery:** an update have been done regarding the new ¨api of ``\tns@det@plane@deco``.
+
+
+==========
+2020-07-29
+==========
+
+**Internal machinery for the documentation:** the ¨python file path::``build-01-dep[slow].py`` updates automatically a ¨tex file with all the packages used by ¨tnslinalg.
+
+
+==========
 2020-07-23
 ==========
 
