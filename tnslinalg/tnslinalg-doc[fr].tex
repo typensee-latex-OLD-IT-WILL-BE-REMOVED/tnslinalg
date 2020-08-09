@@ -12,6 +12,20 @@
 \usepackage[top=2cm, bottom=2cm, left=1.5cm, right=1.5cm]{geometry}
 \usepackage{enumitem}
 
+% Source
+%	* https://tex.stackexchange.com/a/558025/6880
+\usepackage{tocbasic}[2020/07/22]% needs KOMA-Script version 3.31
+\DeclareTOCStyleEntries[
+  raggedentrytext,
+  linefill=\hfill,
+  indent=0pt,
+  dynindent,
+  numwidth=0pt,
+  numsep=1ex,
+  dynnumwidth
+]{tocline}{chapter,section,subsection,subsubsection,paragraph,subparagraph}
+\DeclareTOCStyleEntry[indentfollows=chapter]{tocline}{section}
+
 \usepackage{pgffor}
 
 \usepackage{multicol}
@@ -28,6 +42,7 @@
     urlcolor=black
 }
 
+\usepackage[numbered]{bookmark}
 \usepackage{amsthm}
 
 \usepackage{tcolorbox}
@@ -42,9 +57,11 @@
 
 % Sections numbering
 
-\renewcommand\thesection{\arabic{section}.}
-\renewcommand\thesubsection{\alph{subsection}.}
+%\renewcommand\thechapter{\Alph{chapter}.}
+\renewcommand\thesection{\Roman{section}.}
+\renewcommand\thesubsection{\arabic{subsection}.}
 \renewcommand\thesubsubsection{\roman{subsubsection}.}
+
 
 
 % MISC
@@ -480,7 +497,7 @@ Tous les changements sont disponibles uniquement en anglais dans le dossier \ver
 \subsection{Matrices via \texttt{nicematrix}}
 
 \subsubsection{\texorpdfstring{Calculs expliqués des déterminants $2 \times 2$}%
-                           {Calculs expliqués des déterminants 2x2}} \label{tnslinalg-2D-det}
+                           {Calculs expliqués des déterminants 2x2}} 
 
 
 
