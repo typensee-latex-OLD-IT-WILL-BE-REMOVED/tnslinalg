@@ -1,6 +1,0 @@
- $\calcdettwo*    {a}{c}%
-                  {b}{d}
-= \calcdettwo     {a}{c}%
-                  {b}{d}
-= \calcdettwo[exp]{a}{c}%
-                  {b}{d}$

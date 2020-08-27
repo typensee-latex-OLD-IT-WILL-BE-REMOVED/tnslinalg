@@ -1,4 +1,18 @@
 ==========
+2020-08-27
+==========
+
+**New minor version version::``0.1.0-beta``:** see the new fetaures below.
+
+
+**Determinant `2*2`:** the ¨api has changed.
+
+    1) The macro ``\calcdettwo`` produces all the outputs (expanded versions and decorated ones, cross with or withot arrows has been added).
+
+    1) The macro ``\calcdettwo*`` has been removed.
+
+
+==========
 2020-08-09
 ==========
 
