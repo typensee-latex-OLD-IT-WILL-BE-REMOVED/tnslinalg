@@ -1,0 +1,5 @@
+==========
+2020-09-02
+==========
+
+**Document:** ``\mathbf`` is no longer used in examples because it makes the documentation of ¨tnsmath crashes...

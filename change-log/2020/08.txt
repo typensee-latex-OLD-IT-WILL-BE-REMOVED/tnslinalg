@@ -2,7 +2,7 @@
 2020-08-27
 ==========
 
-**New minor version version::``0.1.0-beta``:** see the new fetaures below.
+**New minor version version::``0.1.0-beta``:** see the new features below.
 
 
 **Determinant `2*2`:** the ¨api has changed.
