@@ -1,0 +1,8 @@
+==========
+2020-02-26
+==========
+
+**New minor version version::``0.2.0-beta``:** see the new features below.
+
+
+**Update regarding the package ``nicematrix``:** the options ``renew-dots`` and ``renew-matrix`` replace the deprecated ``transparent``.

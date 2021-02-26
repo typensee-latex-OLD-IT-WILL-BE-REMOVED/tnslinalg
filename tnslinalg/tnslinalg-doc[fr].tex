@@ -33,6 +33,7 @@
 
 \usepackage{enumitem}
 \usepackage{multicol}
+\usepackage{longtable}
 \usepackage{makecell}
 
 \setlength{\parindent}{0cm}
@@ -290,10 +291,10 @@
 	Le package \texttt{tnslinalg}:\\%
 	un peu d'algèbre linéaire de base\\%
 	{\footnotesize Code source disponible sur \url{https://github.com/typensee-latex/tnslinalg.git}.}\\%
-{\footnotesize Version \texttt{0.1.0-beta} développée et testée sur \macosxname{}.}%
+{\footnotesize Version \texttt{0.2.0-beta} développée et testée sur \macosxname{}.}%
 }
 \author{Christophe BAL}
-\date{2020-08-27}
+\date{2021-02-26}
 
 \maketitle
 
@@ -323,7 +324,7 @@ Le package \verb+tnslinalg+ complète un tout petit peu l'excellent package \ver
 % List of packages - START
 \section{Packages utilisés}
 
-La roue ayant déjà été inventée, le package \verb#tnslinalg# réutilise les packages suivants sans aucun scrupule.
+La roue ayant déjà été inventée, le package \verb#tnslinalg# utilise les packages suivants sans aucun scrupule.
 
 \begin{multicols}{4}
     \begin{itemize}
@@ -535,6 +536,22 @@ Tous les changements sont disponibles uniquement en anglais dans le dossier \ver
 
 \begin{description}
 % Changes shown - START
+
+    \medskip
+    \item[2021-02-26] Nouvelle version mineure \verb+0.2.0-beta+.
+    
+    \begin{itemize}[itemsep=.5em]
+        \item \topic*{Mise à jour imposée par \texttt{nicematrix}}
+              les options \verb#renew-dots# et \verb#renew-matrix# remplacent l'option dépréciée \verb#transparent#.
+    
+    	% -------------- %
+    
+    \end{itemize}
+    
+    \separation
+    
+
+% ------------------------ %
 
     \medskip
     \item[2020-08-27] Nouvelle version mineure \verb+0.1.0-beta+.
